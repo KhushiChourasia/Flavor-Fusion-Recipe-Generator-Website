@@ -187,7 +187,7 @@ body{
     
    
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:400px){
     .search h1{
         text-align: center;
         font-size: 3.5rem;
