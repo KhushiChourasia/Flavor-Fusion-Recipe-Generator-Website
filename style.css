@@ -191,23 +191,23 @@ body{
     .search h1{
         text-align: center;
         font-size: 2.5rem;
-        margin-right: 120px;
+        margin-right: 60px;
     }
     .search h2{
         text-align: center;
         font-size: 1.7rem;
-        margin-right: 120px;
+        margin-right: 60px;
 
     }
     .search{
-        width: 480px;
+       
         margin: 10px;
     }
     .search blockquote{
         text-align: center;
         font-size: 1rem;
         font-weight: 400;
-        margin-right: 120px;
+        margin-right: 60px;
     }
 
     .meal-recipe{
@@ -223,6 +223,7 @@ body{
    
         padding: 0 0.5rem;
         margin-left: 0vw;
+        margin-right: 20px;
         font-size: 1rem;
       
     }
