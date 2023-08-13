@@ -1,18 +1,17 @@
 const searchbtn=document.getElementById('search-btn');
 const mealitem=document.getElementById('meal');
-const mealrecipe=document.querySelector('.meal-recipe');
+const mealrecipe=document.querySelector('.meal-detail');
 const closebutton=document.getElementById('close-button');
 
 
 
 searchbtn.addEventListener('click',getMealItem);
 mealitem.addEventListener('click',getMealRecipe);
-closebutton.addEventListener('click', function() {
- // mealrecipe.classList.remove('show-recipe');
-    mealrecipe.style.display='none';
-});
-
-
+closebutton.addEventListener('click',rem_recipe);
+function rem_recipe(){
+ mealrecipe.parentElement.classList.remove('show-recipe');
+ /* mealrecipe.style.display='none';*/
+}
 
 function getMealItem() {
     let searchInputtxt=document.getElementById('search-bar-input').value.trim();
@@ -39,10 +38,7 @@ function getMealItem() {
         </div>
       </div>`
                 
-                  
-                       
-                    
-             
+   
         
     });
     mealitem.classList.remove('NotFound');
@@ -55,7 +51,6 @@ function getMealItem() {
    })
   
 
-    
 }
 function getMealRecipe(e) {
     e.preventDefault();
@@ -71,21 +66,14 @@ function makeRecipe(meal) {
     console.log(meal);
     meal=meal[0];
     let html=`
-                
-                <button type = "button" class = "btn recipe-close-btn" id = "close-button">
-                <i class=' bx bx-window-close'></i>
-              </button>
-              <div class="meal-detail">
               <h2 class="Recipe-title">${meal.strMeal}</h2>
                 <img src="${meal.strMealThumb}" height="40" border-radius="50%">
                 <h3>Recipe</h3>
                 <p>${meal.strInstructions}</p>
                 <a  class="video-link"    href="${meal.strYoutube}">Watch Video</a>
-              </div>`
+             `
               mealrecipe.innerHTML=html;
-              mealrecipe.classList.add('show-recipe');
+              mealrecipe.parentElement.classList.add('show-recipe');
 
 
-              
-    
 }
